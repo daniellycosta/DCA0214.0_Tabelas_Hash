@@ -34,9 +34,18 @@ public class SecurityProvider {
 		strFinal += salt;
 		return md5(strFinal);
 	}
-	public static String[] md5ToClient(Conta conta)
-	{
-		return null;
+	
+	
+	public static String[] md5ToClient(Conta conta){
+		String toCrypt = conta.getNomeCliente()+" "+conta.getSaldo();
+		
+		int size = toCrypt.length();
+		String[] accountCrypted = new String[size];
+		
+		for(int i = 0; i<toCrypt.length(); i++) {
+			accountCrypted[i] = md5(Character.toString(toCrypt.charAt(i))); //[Dani] será que é assim mesmo?
+		}
+		return accountCrypted;
 	}
 }
 
