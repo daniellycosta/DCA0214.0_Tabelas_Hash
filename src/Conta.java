@@ -1,4 +1,3 @@
-
 public class Conta {
 	private String nomeCliente;
 	private String saldo;
@@ -7,12 +6,12 @@ public class Conta {
 	private String senha;
 	private String md5;
 	
-//falta completar os construtores da classe Conta, fazendo com que o campo md5 de
 	//cada conta seja inicializado por meio do metodo criado.
 	Conta(String agencia, String numero, String senha){
 		this.agencia = agencia;
 		this.numero = numero;
 		this.senha = senha;
+		this.md5 = SecurityProvider.md5ToServer(this);
 	}
 	Conta(String agencia, String numero, String senha, String saldo, String nomeCliente){
 		this.agencia = agencia;
@@ -20,6 +19,7 @@ public class Conta {
 		this.senha = senha;
 		this.saldo = saldo;
 		this.nomeCliente = nomeCliente;
+		this.md5 = SecurityProvider.md5ToServer(this);
 	}
 	Conta(String nomeCliente,String saldo){
 		this.nomeCliente = nomeCliente;
@@ -64,9 +64,11 @@ public class Conta {
 	}
 	@Override
 	public String toString() {
-		return "Conta [nomeCliente=" + nomeCliente + ", saldo=" + saldo
-				+ ", agencia=" + agencia + ", numero=" + numero + ", senha="
-				+ senha + ", md5=" + md5 + "]";
+		return "AGENCIA: " + this.agencia + "/n" 
+				+ "CONTA: "+ this.numero + "/n"
+				+ "SENHA: "+ this.senha + "/n" 
+				+ "NOME CLIENTE: " + this.nomeCliente + "/n"
+				+ "SALDO: " + this.saldo + "/n"
+				+ "MD5: " + this.md5;
 	}
-
 }
