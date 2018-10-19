@@ -1,3 +1,4 @@
+package javaapplication1;
 public class Conta {
 	private String nomeCliente;
 	private String saldo;
@@ -64,11 +65,12 @@ public class Conta {
 	}
 	@Override
 	public String toString() {
-		return "AGENCIA: " + this.agencia + "/n" 
-				+ "CONTA: "+ this.numero + "/n"
-				+ "SENHA: "+ this.senha + "/n" 
-				+ "NOME CLIENTE: " + this.nomeCliente + "/n"
-				+ "SALDO: " + this.saldo + "/n"
+		return "AGENCIA: " + this.agencia + "\n" 
+				+ "CONTA: "+ this.numero + "\n"
+				+ "SENHA: "+ this.senha + "\n" 
+				+ "NOME CLIENTE: " + this.nomeCliente + "\n"
+				+ "SALDO: " + this.saldo + "\n"
 				+ "MD5: " + this.md5;
 	}
+
 }

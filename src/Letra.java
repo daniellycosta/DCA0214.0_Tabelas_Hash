@@ -1,9 +1,12 @@
+package javaapplication1;
 
 public class Letra {
 	private String caractere;
 	private String md5Code;
+        
 	Letra(String caractere){
-		caractere = md5Code(caractere);
+		md5Code = SecurityProvider.md5(caractere);
+                this.caractere = caractere;
 	}
 	public String getCaractere() {
 		return caractere;

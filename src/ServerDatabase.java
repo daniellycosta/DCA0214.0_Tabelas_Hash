@@ -1,3 +1,4 @@
+package javaapplication1;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
@@ -21,18 +22,18 @@ public class ServerDatabase extends Database{
 		
 	public static void insereConta(Conta conta){
 		String md5 = SecurityProvider.md5ToServer(conta);
-		int i = hashCode(md5)%100; // é aqui que pega o resto da divisão, não?
+		int i = hashCode(md5); // ï¿½ aqui que pega o resto da divisï¿½o, nï¿½o?
 		ArrayList<Conta> lista = contas.get(i);	 //tem que ver um jeito de tratar i iguais
-		//md5(conta) = md5ToServer(conta)%100; não entendi [Dani]
+		//md5(conta) = md5ToServer(conta)%100; nï¿½o entendi [Dani]
 		lista.add(conta);
 	}
 	
 	public static Conta getConta(String md5){
-		int i  = hashCode(md5)%100;
+		int i  = hashCode(md5);
 		ArrayList<Conta> lista = contas.get(i);	
-		while(lista != null){
-			if(lista.get(i).getMd5() == md5){
-				return lista.get(i);
+		for(int k = 0; k < lista.size(); k++) {
+			if(lista.get(k).getMd5().equals(md5)){
+				return lista.get(k);
 			}
 		}
 		return null;

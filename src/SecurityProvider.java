@@ -1,3 +1,4 @@
+package javaapplication1;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -43,7 +44,7 @@ public class SecurityProvider {
 		String[] accountCrypted = new String[size];
 		
 		for(int i = 0; i<toCrypt.length(); i++) {
-			accountCrypted[i] = md5(Character.toString(toCrypt.charAt(i))); //[Dani] será que é assim mesmo?
+			accountCrypted[i] = md5(Character.toString(toCrypt.charAt(i))); //[Dani] serï¿½ que ï¿½ assim mesmo?
 		}
 		return accountCrypted;
 	}
