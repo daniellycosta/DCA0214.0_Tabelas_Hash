@@ -22,9 +22,8 @@ public class ServerDatabase extends Database{
 		
 	public static void insereConta(Conta conta){
 		String md5 = SecurityProvider.md5ToServer(conta);
-		int i = hashCode(md5); // � aqui que pega o resto da divis�o, n�o?
-		ArrayList<Conta> lista = contas.get(i);	 //tem que ver um jeito de tratar i iguais
-		//md5(conta) = md5ToServer(conta)%100; n�o entendi [Dani]
+		int i = hashCode(md5);
+		ArrayList<Conta> lista = contas.get(i);	 
 		lista.add(conta);
 	}
 	

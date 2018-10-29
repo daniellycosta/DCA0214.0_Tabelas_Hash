@@ -44,7 +44,7 @@ public class SecurityProvider {
 		String[] accountCrypted = new String[size];
 		
 		for(int i = 0; i<toCrypt.length(); i++) {
-			accountCrypted[i] = md5(Character.toString(toCrypt.charAt(i))); //[Dani] ser� que � assim mesmo?
+			accountCrypted[i] = md5(Character.toString(toCrypt.charAt(i)));
 		}
 		return accountCrypted;
 	}

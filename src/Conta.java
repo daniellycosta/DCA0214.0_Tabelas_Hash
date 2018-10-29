@@ -7,7 +7,6 @@ public class Conta {
 	private String senha;
 	private String md5;
 	
-	//cada conta seja inicializado por meio do metodo criado.
 	Conta(String agencia, String numero, String senha){
 		this.agencia = agencia;
 		this.numero = numero;
